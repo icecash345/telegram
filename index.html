@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Mini App</title>
+    <!-- Include the Telegram Web App SDK -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <h1>Welcome to Telegram Mini App</h1>
+    <p>This is a simple Telegram Mini App running locally in Visual Studio Code!</p>
+
+    <!-- Button to interact with the Telegram Web App -->
+    <button id="send-message">Send Message to Telegram</button>
+
+    <script>
+        // Wait until the Telegram Web App is ready
+        window.Telegram.WebApp.ready();
+
+        // Example of sending a message to Telegram using the Web App SDK
+        document.getElementById("send-message").addEventListener("click", () => {
+            // Send data back to Telegram
+            window.Telegram.WebApp.sendData("Hello from your Telegram Mini App!");
+
+            // Optionally, show a confirmation alert
+            alert("Message sent to Telegram!");
+        });
+
+        // Customize the appearance and main button
+        window.Telegram.WebApp.MainButton.setText("Send Custom Data");
+        window.Telegram.WebApp.MainButton.show();
+    </script>
+</body>
+</html>
